@@ -1,22 +1,22 @@
 #!/bin/bash -x
-echo "Welcome to Filp Coin Simulation"
 
 Heads=0
 Tails=0
-for (( i=0; i<=20;i++))
-do
 
-	x=$((RANDOM%10))
+while [ $Heads -ne 21 ]
+do
+        x=$((RANDOM%10))
         FLIP=$(( x % 2 ))
 
                 if [ $FLIP -eq 0 ]
 
                 then
-                         ((Heads++))
-                else
-			 ((Tails++))
-                fi
+                        ((Heads++))
 
+                else
+
+                        ((Tails++))
+                fi
 done
 
 echo "Number of time Heads are" $Heads
@@ -31,3 +31,4 @@ then
 else
         echo "Tie"
 fi
+
