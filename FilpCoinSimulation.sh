@@ -23,13 +23,13 @@ done
 echo "Number of time Heads are" $Heads
 echo "Number of time Tails are" $Tails
 
-if [[ $Heads -gt $Tails ]]
+if [[ $Heads -eq 21 ]]
 then
 	s=$(($Heads - $Tails))        
 	echo "Heads Win by" $s
-elif [[ $Tails -lt $Heads ]]
+elif [[ $Tails -eq 21 ]]
 then
-	s=$(($Heads - $Tails))
+	s=$(($Tails - $Heads))
         echo "Tails Win by " $s
 else
         echo "Tie"
