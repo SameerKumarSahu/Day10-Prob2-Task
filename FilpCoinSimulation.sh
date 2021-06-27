@@ -3,7 +3,8 @@
 Heads=0
 Tails=0
 
-while [ $Heads -ne 21 ]
+while [[ $Heads -lt 21  &&
+		 $Tails -lt 21 ]]
 do
         x=$((RANDOM%10))
         FLIP=$(( x % 2 ))
@@ -24,10 +25,12 @@ echo "Number of time Tails are" $Tails
 
 if [[ $Heads -gt $Tails ]]
 then
-        echo "Heads Win"
-elif [[ $Heads -lt $Tails ]]
+	s=$(($Heads - $Tails))        
+	echo "Heads Win by" $s
+elif [[ $Tails -lt $Heads ]]
 then
-        echo "Tails Win"
+	s=$(($Heads - $Tails))
+        echo "Tails Win by " $s
 else
         echo "Tie"
 fi
